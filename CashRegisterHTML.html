@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cash Register</title>
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="cashRegisterStyles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px" rel="stylesheet">
+</head>
+<body>
+  <script src="cashRegister.js">
+  </script>
+<header>
+<h1>Cash Register Javascript Program</h1>
+</header>
+<section>
+<div id="orderInput">
+<h2>Welcome to Scott's store</h2>
+<p>What would you like to purchase today?</p>
+
+<form id="shoppingForm">
+<table id="orderForm">
+      <th>
+        <span>Item</span>
+      </th>
+      <th>
+        <span>Quantity</span>
+      </th>
+      <th>
+        <span>Price</span>
+      </th>
+    <tr>
+      <td>
+        <span>Eggs</span>
+      </td>
+      <td>
+        <input type="text" name="item" id="eggsQty">
+      </td>
+      <td>
+        <span id="eggsCost">0.98</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Milk</span>
+      </td>
+      <td>
+        <input type="text" name="item" id="milkQty">
+      </td>
+      <td>
+        <span id="milkCost">1.23</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Magazines</span>
+      </td>
+      <td>
+        <input type="text" name="item" id="magazinesQty">
+      </td>
+      <td>
+        <span id="magazinesCost">4.99</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span>Chocolate</span>
+      </td>
+      <td>
+        <input type="text" name="item" id="chocolateQty">
+      </td>
+      <td>
+        <span id="chocolateCost">0.45</span>
+      </td>
+    </tr>
+    </table>
+<input type="button" class="button" onClick="cashRegister.scan();showBill(); " value="Save and continue.">
+</div>
+
+<div id="totals">
+<h3>Your total is:</h3>
+<span id="totalOutput"></span>
+<h3>Your transaction history is:</h3>
+<span id="receipt"></span>
+<input type="button" onclick="cashRegister.voidLastTransaction()" value="Void Last Transaction">
+</div>
+<p><input type="button"  class="button" id="StaffMember" value="Member of staff?" onclick="showStaff()"></p>
+<div id="staffMembers" style="display:none">
+  <h3>Which staff member?</h3>
+  <form name="staffNames">
+  <input type="radio" name="staff" value="Bob" id="bob">Bob<br>
+  <input type="radio" name="staff" value="Susan" id="susan">Susan<br>
+  <input type="radio" name="staff" value="Scott" id="scott">Scott<br>
+  <input type="button" class="button"  id="staffDiscount" onclick="applyStaffDiscount()" value="Apply staff discount">
+</form>
+</div>
+
+
+
+</section>
+
+</body>
+</html>

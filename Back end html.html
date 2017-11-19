@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cash Register</title>
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="cashRegisterStyles.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+27px" rel="stylesheet">
+</head>
+<body>
+  <script src="cashRegister.js">
+  </script>
+<header>
+<h1>Cash Register Backend</h1>
+</header>
+<section>
+<div id="orderInput">
+<h2>Cash Register Administration Area</h2>
+<p>Use this area to add items for sale</p>
+
+<form id="newStock">
+Name:<input type="text" id="stockName"><br>
+Price:  <input type="text" id="stockPrice"><br>
+Price per Kilo:  <input type="text" id="stockCostPerKilo"><br>
+Category:  <input type="text" id="category"><br>
+</form>
+<input type="button" value="Add Item" id="addItem" onclick="groceryItem();">
+
+<form id="stock">
+<table id="elstocktable">
+      <th>
+        <span>Item</span>
+      </th>
+      <th>
+        <span>Price per item</span>
+      </th>
+      <th>
+        <span>Price per Kilogram</span>
+      </th>
+    <tr>
+      <td>
+        <span id="item1">Eggs</span>
+      </td>
+      <td>
+        <span id="item1cost">0.98</span>
+      </td>
+      <td>
+        <span id="item1PriceKilo">0.98</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="item2">Milk</span>
+      </td>
+      <td>
+        <span id="item2cost">1.23</span>
+      </td>
+      <td>
+        <span id="item2PriceKilo">0.98</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="item3">Magazines</span>
+      </td>
+      <td>
+        <span id="item3Cost">4.99</span>
+      </td>
+      <td>
+        <span id="item3PriceKilo">0.98</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span id="item4">Chocolate</span>
+      </td>
+      <td>
+        <span id="item4Cost">0.45</span>
+      </td>
+      <td>
+        <span id="item4PriceKilo">0.98</span>
+      </td>
+    </tr>
+    </table>
+<input type="button" class="button" onClick="cashRegister.scan();showBill(); " value="Save and continue.">
+</div>
+
+<div id="totals">
+<h3>Your total is:</h3>
+<span id="totalOutput"></span>
+<h3>Your transaction history is:</h3>
+<span id="receipt"></span>
+<input type="button" onclick="cashRegister.voidLastTransaction()" value="Void Last Transaction">
+</div>
+<p><input type="button"  class="button" id="StaffMember" value="Member of staff?" onclick="showStaff()"></p>
+<div id="staffMembers" style="display:none">
+  <h3>Which staff member?</h3>
+  <form name="staffNames">
+  <input type="radio" name="staff" value="Bob" id="bob">Bob<br>
+  <input type="radio" name="staff" value="Susan" id="susan">Susan<br>
+  <input type="radio" name="staff" value="Scott" id="scott">Scott<br>
+  <input type="button" class="button"  id="staffDiscount" onclick="applyStaffDiscount()" value="Apply staff discount">
+</form>
+</div>
+
+
+
+</section>
+
+</body>
+</html>
